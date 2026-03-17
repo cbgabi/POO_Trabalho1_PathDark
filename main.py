@@ -1,5 +1,5 @@
 import random
-
+from desafios import bau_raro
 from jogador import Jogador
 from vocacao import Vocacao
 from inimigo import inimigos
@@ -57,5 +57,8 @@ print("\nFim da batalha!")
 if jogador.vida > 0:
     print("Você venceu!")
     jogador.ganhar_exp(inimigo.exp_recompensa)
-else:
+
+    if random.randint(1, 100) <= 30:
+        bau_raro(jogador)
+    else:
     print("Você perdeu!")
